@@ -1,4 +1,4 @@
-# Twitter Clone - Documentation
+# TwitX - Documentation
 
 Bienvenue dans la documentation du projet Twitter Clone. Ce projet vise à reproduire les fonctionnalités essentielles de la plateforme de médias sociaux Twitter. Il a été développé en utilisant Swift pour iOS et Node.js pour les fonctionnalités côté serveur.
 
