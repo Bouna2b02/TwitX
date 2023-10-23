@@ -41,7 +41,7 @@ Bienvenue dans la documentation du projet Twitter Clone. Ce projet vise à repro
 
 ## Capture d'Écran
 
-<img src="captures-ecran/capture1.png" width="400">
+<img src="captures-ecran/capture1.png" width="200">
 
 ## Contribution
 
