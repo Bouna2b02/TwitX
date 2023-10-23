@@ -29,7 +29,7 @@ Bienvenue dans la documentation du projet Twitter Clone. Ce projet vise à repro
 
 ## Installation
 
-1. Clonez le référentiel : `git clone https://github.com/votre-nom-utilisateur/twitter-clone.git`
+1. Clonez le référentiel : `git@github.com:Bouna2b02/TwitX.git`
 2. Configurez le serveur : Consultez `twitter-clone-server/README.md` pour les instructions de configuration du serveur.
 3. Compilez et exécutez l'application iOS : Ouvrez `twitter-clone-ios/TwitterClone.xcodeproj` dans Xcode et exécutez l'application sur un simulateur ou un appareil.
 
