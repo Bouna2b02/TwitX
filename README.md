@@ -3,7 +3,7 @@ Description brève de votre projet.
 
 <Autres informations générales>
 
-<Badges, logo, ou autres informations d'introduction>
+![Logo](Logo-Twitter-X-Elon-Musk.jpeg)
 
 <Section Table des Matières>
 
