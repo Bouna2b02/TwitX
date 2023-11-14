@@ -2,7 +2,6 @@
 //  Profile.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 9/18/21.
 //
 
 import SwiftUI
@@ -11,17 +10,12 @@ class ProfileViewModel: ObservableObject {
     
     @Published var tweets = [Tweet]()
     @Published var user: User
+    @Published var followersCount: Int = 0
+    @Published var followingsCount: Int = 0
     
     init(user: User) {
         self.user = user
-//        let defaults = UserDefaults.standard
-//        let token = defaults.object(forKey: "jsonwebtoken")
-//        
-//        if token != nil {
-//            if let userId = defaults.object(forKey: "userid") {
-//                fetchUser(userId: userId as! String)
-//            }
-//        }
+
         fetchTweets()
         checkIfIsCurrentUser()
         checkIfUserIsFollowed()
@@ -85,6 +79,48 @@ class ProfileViewModel: ObservableObject {
         self.user.isFollowed = false
     }
     
+    func fetchFollowersCount() {
+        guard let userId = AuthViewModel.shared.currentUser?.id else { return }
+
+        let followersCountURL = "http://localhost:3000/users/\(userId)/followersCount"
+
+        RequestServices.requestDomain = followersCountURL
+
+        RequestServices.fetchData { result in
+            switch result {
+            case .success(let data):
+                if let count = try? JSONDecoder().decode([String: Int].self, from: data as! Data) {
+                    DispatchQueue.main.async {
+                        self.followersCount = count["followersCount"] ?? 0
+                    }
+                }
+            case .failure(let error):
+                print("Error fetching followers count:", error.localizedDescription)
+            }
+        }
+    }
+
+    func fetchFollowingsCount() {
+        guard let userId = AuthViewModel.shared.currentUser?.id else { return }
+
+        let followingsCountURL = "http://localhost:3000/users/\(userId)/followingsCount"
+
+        RequestServices.requestDomain = followingsCountURL
+
+        RequestServices.fetchData { result in
+            switch result {
+            case .success(let data):
+                if let count = try? JSONDecoder().decode([String: Int].self, from: data as! Data) {
+                    DispatchQueue.main.async {
+                        self.followingsCount = count["followingsCount"] ?? 0
+                    }
+                }
+            case .failure(let error):
+                print("Error fetching followings count:", error.localizedDescription)
+            }
+        }
+    }
+    
     func checkIfUserIsFollowed() {
 //        if (self.tweet.likes.contains(self.currentUser.id)) {
 //            self.tweet.didLike = true
@@ -103,7 +139,6 @@ class ProfileViewModel: ObservableObject {
     
     func checkIfIsCurrentUser() {
         if (self.user._id == AuthViewModel.shared.currentUser?._id) {
-//            AuthViewModel.shared.currentUser?.isCurrentUser = true
             self.user.isCurrentUser = true
         }
     }

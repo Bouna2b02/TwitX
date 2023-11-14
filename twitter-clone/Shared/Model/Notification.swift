@@ -2,7 +2,6 @@
 //  Notification.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 8/28/22.
 //
 
 import Foundation

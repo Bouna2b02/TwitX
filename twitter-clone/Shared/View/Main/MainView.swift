@@ -2,7 +2,6 @@
 //  MainView.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 7/31/21.
 //
 
 import SwiftUI

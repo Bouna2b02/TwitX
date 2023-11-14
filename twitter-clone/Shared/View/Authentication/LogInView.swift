@@ -2,7 +2,6 @@
 //  LogInView.swift
 //  Twitter-Clone (iOS)
 //
-//  Created by cem on 9/6/21.
 //
 
 import SwiftUI

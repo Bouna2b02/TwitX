@@ -2,7 +2,6 @@
 //  MessagesView.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 8/1/21.
 //
 
 import SwiftUI

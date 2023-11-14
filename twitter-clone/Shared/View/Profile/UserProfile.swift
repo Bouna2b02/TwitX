@@ -2,7 +2,6 @@
 //  UserProfile.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 7/31/21.
 //
 
 import SwiftUI
@@ -40,7 +39,9 @@ struct UserProfile: View {
     init(user: User) {
         self.user = user
         self.viewModel = ProfileViewModel(user: user)
-        
+        // Fetch followers and followings counts when the view appears
+        viewModel.fetchFollowersCount()
+        viewModel.fetchFollowingsCount()
     }
     
     
@@ -265,23 +266,23 @@ struct UserProfile: View {
                             }
                             
                             HStack(spacing: 5) {
-                                
-                                Text("4,560")
+                                Text("\(viewModel.followersCount)")
                                     .foregroundColor(.primary)
                                     .fontWeight(.semibold)
-                                
+
                                 Text("Followers")
                                     .foregroundColor(.gray)
-                                
-                                Text("680")
+
+                                Text("\(viewModel.followingsCount)")
                                     .foregroundColor(.primary)
                                     .fontWeight(.semibold)
-                                    .padding(.leading,10)
-                                
+                                    .padding(.leading, 10)
+
                                 Text("Following")
                                     .foregroundColor(.gray)
                             }
                             .padding(.top, 8)
+                        
                         })
                         .padding(.leading, 8)
                         .overlay(

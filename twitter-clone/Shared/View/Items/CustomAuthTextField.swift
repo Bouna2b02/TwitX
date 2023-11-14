@@ -2,7 +2,6 @@
 //  CustomAuthTextField.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 8/20/21.
 //
 
 import SwiftUI

@@ -2,7 +2,6 @@
 //  AuthViewModel.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 8/23/21.
 //
 
 import SwiftUI
@@ -11,6 +10,7 @@ class AuthViewModel: ObservableObject {
     
     @Published var isAuthenticated: Bool = false
     @Published var currentUser: User?
+    
     
     init() {
         let defaults = UserDefaults.standard

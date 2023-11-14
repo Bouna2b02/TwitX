@@ -2,7 +2,6 @@
 //  SearchViewModel.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 8/27/22.
 //
 
 import SwiftUI

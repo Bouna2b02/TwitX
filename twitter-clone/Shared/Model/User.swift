@@ -2,7 +2,6 @@
 //  User.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 9/11/21.
 //
 
 import Foundation

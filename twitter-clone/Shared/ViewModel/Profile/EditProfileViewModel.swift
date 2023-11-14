@@ -2,8 +2,6 @@
 //  EditProfileViewModel.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 12/7/21.
-//
 
 import SwiftUI
 
@@ -56,17 +54,7 @@ class EditProfileViewModel: ObservableObject {
                 self.uploadComplete = true
 
             }
-//            switch res {
-//                case .success(let data):
-//                    completion(.success(data))
-//                case .failure(.invalidURL):
-//                    completion(.failure(.custom(errorMessage: "The user couldn't be registered")))
-//                case .failure(.noData):
-//                    completion(.failure(.custom(errorMessage: "No Data")))
-//                case .failure(.decodingError):
-//                    completion(.failure(.invalidCredentials))
-//            }
-            
+
             
         }
     }

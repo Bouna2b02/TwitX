@@ -2,8 +2,6 @@
 //  CreateTweetViewModel.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 8/10/21.
-//
 
 import SwiftUI
 
@@ -17,10 +15,7 @@ class CreateTweetViewModel: ObservableObject {
         
         RequestServices.postTweet(text: text, user: user.name, username: user.username, userId: user.id) { res in
             
-//            guard let tweets = try? JSONDecoder().decode(Tweet.self, from: res) else {
-//                return
-//            }
-//            print(tweets)
+
             if let image = image {
                 if let id = res?["_id"]! {
                     print(id)

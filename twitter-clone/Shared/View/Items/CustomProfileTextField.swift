@@ -2,7 +2,6 @@
 //  CustomProfileTextField.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 12/7/21.
 //
 
 import SwiftUI

@@ -2,7 +2,6 @@
 //  RefreshableScrollView.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 5/7/22.
 //
 
 import SwiftUI

@@ -7,22 +7,185 @@ const auth = require('../middleware/auth')
 const findTweet = require('../middleware/findTweet')
 const sharp = require('sharp')
 
-// router.post('/users/me/avatar', auth, upload.single('avatar'), async (req, res) => {
-//     const buffer = await sharp(req.file.buffer).resize({ width: 250, height: 250 }).png().toBuffer()
-//     console.log(buffer)
-//     req.user.avatar = buffer
-//     await req.user.save()
-//     console.log(req.user.avatar)
-//     res.send()
-// }, (error, req, res, next) => {
-//     res.status(400).send({ error: error.message })
-// })
 
 const upload = multer({
     limits: {
         fileSize: 100000000
     }
 })
+
+/**
+ * @swagger
+ * /uploadTweetImage/{id}:
+ *   post:
+ *     summary: Télécharger une image pour un tweet spécifique
+ *     description: Télécharge une image pour un tweet spécifique à l'aide de son ID.
+ *     tags:
+ *       - Tweet
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID du tweet pour télécharger l'image.
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         multipart/form-data:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               upload:
+ *                 type: string
+ *                 format: binary
+ *     responses:
+ *       '200':
+ *         description: Image du tweet mise à jour avec succès.
+ *       '400':
+ *         description: Requête invalide.
+ */
+
+/**
+ * @swagger
+ * /tweets:
+ *   get:
+ *     summary: Obtenir tous les tweets
+ *     description: Récupère tous les tweets existants.
+ *     tags:
+ *       - Tweet
+ *     responses:
+ *       '200':
+ *         description: Liste des tweets récupérée avec succès.
+ *       '500':
+ *         description: Erreur interne du serveur.
+ */
+
+/**
+ * @swagger
+ * /tweets/{id}:
+ *   get:
+ *     summary: Obtenir un tweet par ID utilisateur
+ *     description: Récupère un tweet spécifique en fonction de l'ID utilisateur.
+ *     tags:
+ *       - Tweet
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID de l'utilisateur pour obtenir le tweet.
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Tweet récupéré avec succès.
+ *       '404':
+ *         description: Tweet non trouvé.
+ *       '500':
+ *         description: Erreur interne du serveur.
+ */
+
+/**
+ * @swagger
+ * /tweets:
+ *   post:
+ *     summary: Créer un nouveau tweet
+ *     description: Crée un nouveau tweet pour l'utilisateur connecté.
+ *     tags:
+ *       - Tweet
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               // Ajoutez ici les propriétés du tweet à envoyer dans la requête
+ *     responses:
+ *       '201':
+ *         description: Tweet créé avec succès.
+ *       '400':
+ *         description: Requête invalide.
+ */
+
+/**
+ * @swagger
+ * /tweets/{id}/image:
+ *   get:
+ *     summary: Obtenir l'image d'un tweet par ID
+ *     description: Récupère l'image d'un tweet spécifique en fonction de son ID.
+ *     tags:
+ *       - Tweet
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID du tweet pour obtenir l'image.
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Image du tweet récupérée avec succès.
+ *       '404':
+ *         description: Tweet non trouvé ou image inexistante.
+ */
+
+/**
+ * @swagger
+ * /tweets/{id}/like:
+ *   put:
+ *     summary: Aimer un tweet par ID
+ *     description: Aime un tweet spécifique en fonction de son ID.
+ *     tags:
+ *       - Tweet
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID du tweet à aimer.
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Vous avez aimé ce tweet.
+ *       '403':
+ *         description: Vous avez déjà aimé ce tweet.
+ *       '500':
+ *         description: Erreur interne du serveur.
+ */
+
+/**
+ * @swagger
+ * /tweets/{id}/unlike:
+ *   put:
+ *     summary: Ne plus aimer un tweet par ID
+ *     description: Cessez d'aimer un tweet spécifique en fonction de son ID.
+ *     tags:
+ *       - Tweet
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID du tweet à ne plus aimer.
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Vous n'aimez plus ce tweet.
+ *       '403':
+ *         description: Vous n'avez pas aimé ce tweet ou vous essayez d'annuler votre like.
+ *       '500':
+ *         description: Erreur interne du serveur.
+ */
+
 
 router.post('/uploadTweetImage/:id', auth, upload.single('upload'), async (req, res) => {
     const tweet = await Tweet.findOne({ _id: req.params.id })
@@ -123,92 +286,5 @@ router.put('/tweets/:id/unlike', auth, async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-// const upload = multer({
-//     limits: {
-//         fileSize: 1000000
-//     },
-//     fileFilter(req, file, cb) {
-//         if (!file.originalname.match(/\.(jpg|jpeg|png)$/)) {
-//             return cb(new Error('Please upload an image'))
-//         }
-
-//         cb(undefined, true)
-//     }
-// })
-
-// GET /tasks?completed=true
-// GET /tasks?limit=10&skip=20
-// GET /tasks?sortBy=createdAt:desc
-
-
-
-// router.get('/tweets', async (req, res) => {
-//     const match = {}
-//     const sort = {}
-
-//     if (req.query.completed) {
-//         match.completed = req.query.completed === 'true'
-//     }
-
-//     if (req.query.sortBy) {
-//         const parts = req.query.sortBy.split(':')
-//         sort[parts[0]] = parts[1] === 'desc' ? -1 : 1
-//     }
-
-//     try {
-//         await req.user.populate({
-//             path: 'tasks',
-//             match,
-//             options: {
-//                 limit: parseInt(req.query.limit),
-//                 skip: parseInt(req.query.skip),
-//                 sort
-//             }
-//         }).execPopulate()
-//         res.send(req.user.tasks)
-//     } catch (e) {
-//         res.status(500).send()
-//     }
-// })
-
-
-// router.patch('/tasks/:id', auth, async (req, res) => {
-//     const updates = Object.keys(req.body)
-//     const allowedUpdates = ['description', 'completed']
-//     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
-
-//     if (!isValidOperation) {
-//         return res.status(400).send({ error: 'Invalid updates!' })
-//     }
-
-//     try {
-//         const task = await Task.findOne({ _id: req.params.id, owner: req.user._id})
-
-//         if (!task) {
-//             return res.status(404).send()
-//         }
-
-//         updates.forEach((update) => task[update] = req.body[update])
-//         await task.save()
-//         res.send(task)
-//     } catch (e) {
-//         res.status(400).send(e)
-//     }
-// })
-
-// router.delete('/tasks/:id', auth, async (req, res) => {
-//     try {
-//         const task = await Task.findOneAndDelete({ _id: req.params.id, owner: req.user._id })
-
-//         if (!task) {
-//             res.status(404).send()
-//         }
-
-//         res.send(task)
-//     } catch (e) {
-//         res.status(500).send()
-//     }
-// })
 
 module.exports = router

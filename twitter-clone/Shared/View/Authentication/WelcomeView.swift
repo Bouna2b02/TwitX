@@ -2,7 +2,6 @@
 //  WelcomeView.swift
 //  Twitter-Clone (iOS)
 //
-//  Created by cem on 9/2/21.
 //
 
 import SwiftUI

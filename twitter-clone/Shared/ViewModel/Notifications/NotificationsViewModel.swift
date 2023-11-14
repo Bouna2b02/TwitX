@@ -2,7 +2,6 @@
 //  NotificationsViewModel.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 10/7/22.
 //
 
 import SwiftUI

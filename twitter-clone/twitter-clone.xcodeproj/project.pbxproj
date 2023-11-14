@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		406AD3A92B02C68400210298 /* FollowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406AD3A82B02C68400210298 /* FollowingView.swift */; };
 		B202126628BA1610009BE942 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B202126528BA1610009BE942 /* SearchViewModel.swift */; };
 		B202126828BB816D009BE942 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B202126728BB816D009BE942 /* Notification.swift */; };
 		B20892EC275F6700008A2F78 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20892EB275F6700008A2F78 /* EditProfileView.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		406AD3A82B02C68400210298 /* FollowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingView.swift; sourceTree = "<group>"; };
 		B202126528BA1610009BE942 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		B202126728BB816D009BE942 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		B20892EB275F6700008A2F78 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				B2FCBF7026B5856C0026A4D3 /* SlideMenuItems.swift */,
 				B2FCBF7226B585990026A4D3 /* SlideMenu.swift */,
 				B2F9563126DE67F1009B3713 /* TopBar.swift */,
+				406AD3A82B02C68400210298 /* FollowingView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				B289661B26AF0CFB00A31881 /* ContentView.swift in Sources */,
 				B2EA0C7F26C2AF1100FE7F79 /* NotificationCell.swift in Sources */,
 				B2278E2328B27E8A007BBCB8 /* TweetCellViewModel.swift in Sources */,
+				406AD3A92B02C68400210298 /* FollowingView.swift in Sources */,
 				B2FCBF6B26B559080026A4D3 /* BlurView.swift in Sources */,
 				B2FCBF7626B6890F0026A4D3 /* MultilineTextField.swift in Sources */,
 				B22D1FB32826956900A84B7B /* RefreshableScrollView.swift in Sources */,

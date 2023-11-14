@@ -2,7 +2,6 @@
 //  TweetCellViewModel.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 8/21/22.
 //
 
 import Foundation

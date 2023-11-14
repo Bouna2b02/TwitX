@@ -2,7 +2,6 @@
 //  TopBar.swift
 //  twitter-clone (iOS)
 //
-//  Created by cem on 8/31/21.
 //
 
 import SwiftUI
