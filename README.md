@@ -1,8 +1,7 @@
 # TwitX
 
-Description brève de votre projet.
+Dans le cadre du projet "TwitX", la description de la livraison pourrait répertorier les fonctionnalités clés de l'application, notamment la publication de tweets, la gestion des abonnements, les notifications, la recherche d'utilisateurs et de tweets, la personnalisation du profil, l'accès au fil d'actualités et les interactions avec les tweets. Cette liste détaille les principales composantes du produit final.
 
-<Autres informations générales>
 
 ![Logo](https://www.tomsguide.fr/content/uploads/sites/2/2023/07/Logo-Twitter-X-Elon-Musk.jpg)
 
