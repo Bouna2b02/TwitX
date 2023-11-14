@@ -244,7 +244,42 @@ Dans le cadre du projet "TwitX", la description de la livraison pourrait répert
 <details>
   <summary>Cliquez pour afficher les détails de l'application</summary>
 
-  <Insertez ici le contenu Markdown pour les détails de l'application>
+  
+## 1. Création d'un compte
+
+- TLancez l'application ur l'icone de lancement de votre editeur XCode
+
+## 2. Navigation de base
+
+- **Fil d'actualité** : Consultez les tweets des personnes que vous suivez.
+- **Notifications** : Recevez des alertes pour les mentions, retweets et nouveaux abonnés.
+
+## 3. Publication d'un Tweet
+
+- Cliquez sur l'icône de plume dans le coin inférieur droit.
+- Rédigez votre message dans la zone de composition (280 caractères maximum).
+- Ajoutez des médias (images, GIF, vidéos) en utilisant les icônes dédiées.
+- Cliquez sur "Tweeter" pour publier votre tweet.
+
+## 4. Interaction avec les Tweets
+
+- **Retweet** : Partagez un tweet en appuyant sur l'icône de flèche courbée.
+- **J'aime** : Exprimez votre appréciation en cliquant sur l'icône en forme de cœur.
+
+## 5. Exploration et Recherche
+
+- Utilisez la barre de recherche pour trouver des comptes insscrit dans l'application
+- Découvrez les tendances et actualités sous l'onglet "Explorer".
+
+## 6. Personnalisation du Profil
+
+- Cliquez sur votre photo de profil, puis sur "Profil" pour modifier votre bio et vos images.
+- Gérez vos listes, favoris et paramètres depuis cette section.
+
+## 7. Sécurité et Confidentialité
+
+- Accédez aux paramètres pour gérer la confidentialité, les notifications et la sécurité.
+
 </details>
 
 ---
