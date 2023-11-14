@@ -284,6 +284,7 @@ Dans le cadre du projet "TwitX", la description de la livraison pourrait répert
 
 ---
 
-<License, Contributions, Contact Info, etc.>
+License MIT
+Contributor Bouna Diallo
 
 <Bottom of the README>
